@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+.git
+.beads
+.dolt
+*.db
+*.gate.lock*
+node_modules
+dist
+

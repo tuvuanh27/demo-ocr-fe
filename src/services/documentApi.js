@@ -6,14 +6,13 @@
  * - GET  /api/v1/{endpoint}/{request_id} (Polling status)
  */
 
-const IS_DEV = import.meta.env.DEV;
-const API_BASE = IS_DEV ? '/api-service' : 'https://www.datalab.to/api/v1';
+const API_BASE = '/api-service';
 
 /**
- * Normalize check URL to use Vite proxy in dev mode to avoid CORS restrictions
+ * Normalize check URL to use proxy to avoid CORS restrictions
  */
 function normalizeCheckUrl(url) {
-  if (IS_DEV && url && url.startsWith('https://www.datalab.to/api/v1')) {
+  if (url && url.startsWith('https://www.datalab.to/api/v1')) {
     return url.replace('https://www.datalab.to/api/v1', '/api-service');
   }
   return url;
